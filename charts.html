@@ -6,7 +6,7 @@
     <title>Stocks Trading Simulator</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; background-color: #100425; color: #ffffff; margin: 0; padding: 20px; }
-        #platform-selection, #settings { margin: 20px; }
+        #platform-selection { margin: 20px; }
         #trading-view { width: 100%; height: 500px; margin-top: 20px; }
         select, button { padding: 10px; font-size: 16px; margin: 5px; }
         .dark-theme { background-color: #100425; color: #ffffff; }
@@ -41,8 +41,6 @@
         <button onclick="loadTradingView()">Load Trading View</button>
     </div>
 
-   
-    
     <div id="trading-view"></div>
     
     <!-- Include TradingView script -->
@@ -52,7 +50,6 @@
             const platform = document.getElementById('platform').value;
             const interval = document.getElementById('interval').value;
             const theme = document.getElementById('theme').value === 'dark' ? 'dark' : 'light';
-            const selectedIndicators = Array.from(document.getElementById('indicators').selectedOptions).map(option => option.value);
             
             let symbol;
             switch (platform) {
@@ -88,7 +85,6 @@
                 "enable_publishing": false,
                 "hide_side_toolbar": false,
                 "allow_symbol_change": true,
-                "studies": selectedIndicators,
                 "details": true,
                 "hotlist": true,
                 "calendar": true,
